@@ -1,0 +1,67 @@
+<div class="container">
+    <span><strong> TaskCode</strong></span>
+    <span><strong>Amount</strong></span>
+    <span><strong>MonthlyAmount</strong></span>
+    <span><strong>Remarks</strong></span>
+    <span><strong>Date</strong></span>
+    <form [formGroup]="empForm">
+    
+        <div formArrayName="form">
+            <div *ngFor="let form1 of form.controls; let i=index">
+              <div [formGroupName]="i">
+                {{i}}
+
+                <!-- taskCode : -->
+                <mat-form-field class="example-form-field" appearance="fill">
+                    
+                    <input matInput type="text" formControlName="taskCode">
+                    
+                </mat-form-field>
+
+                <!-- Amount: -->
+                <mat-form-field class="example-form-field" appearance="fill">
+                    
+                    <input matInput type="number" formControlName="amount">
+                    
+                </mat-form-field>
+               
+                
+                <!-- MonthlyAmount: -->
+                <mat-form-field class="example-form-field" appearance="fill">
+                    
+                    <input matInput type="number" formControlName="monthlyAmount">
+                    
+                </mat-form-field>
+
+                
+                <!-- Remarks: -->
+                <!-- <mat-form-field class="example-form-field" appearance="fill">
+                    
+                    <input matInput type="text" formControlName="remarks">
+                    
+                </mat-form-field> -->
+                <mat-form-field appearance="fill">
+                    <mat-select formControlName="remarks" >
+                      <mat-option *ngFor="let remark of remarksDropdown" [value]="remark">
+                        {{remark}}
+                      </mat-option>
+                    </mat-select>
+               </mat-form-field>
+
+
+                <!-- Date:  -->
+                <mat-form-field class="example-form-field" appearance="fill">
+                    
+                    <input matInput type="date" formControlName="date">
+                    
+                </mat-form-field>
+                
+                
+                
+              </div>
+            </div>
+          </div>
+    
+    </form>
+    </div>
+    

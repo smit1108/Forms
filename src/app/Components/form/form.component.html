@@ -1,22 +1,45 @@
 <div class="container">
     <form  [formGroup]="basicForm"  (ngSubmit)="onSubmit()">
     <div class="input">
+
+
     <label >
             Salary:
+            <div>            <mat-form-field appearance="fill">
+                <mat-label>Salary</mat-label>
+                
+                <mat-select formControlName="dropval" name="food">
+                  <mat-option *ngFor="let opt of dropdownopt" [value]="opt">
+                    {{opt}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              </div>
             <div>
-            <input  class="field2"type="number" formControlName="salary">
+            <input *ngIf="checkDrop()" class="field2"type="number" formControlName="salary">
             </div>
     </label>
     </div>
 
     <div class="input">
-    <label >
-        Percent: 
-        <div>
-        <input  class="field"type="number" formControlName="nps_percent">
-        <button class="btn animated-border-button" type="submit" [disabled]="!basicForm.valid" (click)="onCheck()">Check</button>
+    
+        <label >
+            NPS percent
+        <div> 
+       
+        <mat-form-field appearance="fill">
+            <mat-label>NPs Percent</mat-label>
+            
+            <mat-select formControlName="nps_percent" name="food">
+              <mat-option *ngFor="let number of list" [value]="number">
+                {{number}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+        <button class="btn " type="submit" [disabled]="!basicForm.valid" (click)="onCheck()">Check</button>
             </div>
-    </label>
+        </label>
     </div>
 
     <div class="input"> 
@@ -35,7 +58,7 @@
         </div>
     </label>
 
-    <button  class="button animated-border-button" type="submit" [disabled]="!basicForm.valid">Submit</button>
+    <button  class="button " type="submit" [disabled]="!basicForm.valid">Submit</button>
 
     </div>
 </form>

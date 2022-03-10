@@ -1,0 +1,21 @@
+table {
+    width: 80%;
+    height: 75%;
+    margin-top: 1%;
+    margin-left: 100px;
+    margin-bottom: 50px;
+  }
+  
+  /* .search{
+    height: 30px;
+    width:180px;
+    margin-left: 10px;
+
+  } */
+
+  mat-chip-list{
+    margin-left: 100px;
+  }
+  .appFilters{
+    margin-left: 50px;
+  }

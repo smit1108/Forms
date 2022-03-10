@@ -1,0 +1,15 @@
+mat-form-field{
+    margin-left: 30px;
+    margin-top: 120px;
+    margin-right: 50px;
+}
+
+/* .custom-font-size .multiselect-dropdown .dropdown-btn {
+    width: 50pt !important; 
+} */
+
+
+ng-multiselect-dropdown /deep/ .multiselect-dropdown > .dropdown-btn{
+    font-size:12px !important;
+    width:50px !important;
+ }
